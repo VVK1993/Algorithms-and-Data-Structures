@@ -1,0 +1,6 @@
+C:\Users\Vladimir\Documents\Visual Studio 2013\Projects\AlgTrains\AlgTrains\bin\Release\AlgTrains.exe.config
+C:\Users\Vladimir\Documents\Visual Studio 2013\Projects\AlgTrains\AlgTrains\bin\Release\Assets\IntegerArray.txt
+C:\Users\Vladimir\Documents\Visual Studio 2013\Projects\AlgTrains\AlgTrains\bin\Release\AlgTrains.exe
+C:\Users\Vladimir\Documents\Visual Studio 2013\Projects\AlgTrains\AlgTrains\bin\Release\AlgTrains.pdb
+C:\Users\Vladimir\Documents\Visual Studio 2013\Projects\AlgTrains\AlgTrains\obj\Release\AlgTrains.exe
+C:\Users\Vladimir\Documents\Visual Studio 2013\Projects\AlgTrains\AlgTrains\obj\Release\AlgTrains.pdb
