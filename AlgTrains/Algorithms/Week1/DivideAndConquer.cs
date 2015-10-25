@@ -126,6 +126,7 @@ namespace AlgTrains.Algorithms.Week1
         }
 
         /// <summary>
+        /// Running time = O(n^2)
         /// assume x and y are the same length
         /// Uses 4 Recursive calls
         /// </summary>
@@ -155,6 +156,7 @@ namespace AlgTrains.Algorithms.Week1
         }
 
         /// <summary>
+        /// Running time = O(n^1.59)
         /// assume x and y are the same length
         /// Uses 3 Recursive calls. Much faster
         /// </summary>

@@ -5,3 +5,10 @@ c:\users\vladimir\documents\visual studio 2013\Projects\AlgTrains\AlgTrains\obj\
 c:\users\vladimir\documents\visual studio 2013\Projects\AlgTrains\AlgTrains\obj\Debug\AlgTrains.exe
 c:\users\vladimir\documents\visual studio 2013\Projects\AlgTrains\AlgTrains\obj\Debug\AlgTrains.pdb
 C:\Users\Vladimir\Documents\Visual Studio 2013\Projects\AlgTrains\AlgTrains\bin\Debug\Assets\IntegerArray.txt
+C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\AlgTrains.exe.config
+C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\obj\Debug\AlgTrains.exe
+C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\obj\Debug\AlgTrains.pdb
+C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\Assets\IntegerArray.txt
+C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\AlgTrains.exe
+C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\AlgTrains.pdb
+C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\obj\Debug\AlgTrains.csprojResolveAssemblyReference.cache
