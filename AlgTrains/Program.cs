@@ -1,4 +1,5 @@
 ﻿using AlgTrains.Algorithms.Week1;
+using AlgTrains.Algorithms.Week2;
 using AlgTrains.Helper;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,8 @@ namespace AlgTrains
     {
         static void Main(string[] args)
         {
-            DivideAndConquer.PerformAllTasks();
+            //DivideAndConquer.PerformAllTasks();
+            QuickSort.PerformAllTasks();
             Console.ReadKey();
         }
     }

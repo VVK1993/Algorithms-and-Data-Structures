@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms\Week1\DivideAndConquer.cs" />
+    <Compile Include="Algorithms\Week2\QuickSort.cs" />
     <Compile Include="Helper\ExtensionMethods.cs" />
     <Compile Include="Helper\FileReader.cs" />
     <Compile Include="Program.cs" />

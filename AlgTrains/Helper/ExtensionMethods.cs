@@ -18,7 +18,7 @@ namespace AlgTrains.Helper
         {
             for (int i = 0; i < array.Length; i++)
             {
-                for(int j = i +1; j <array.Length; j++)
+                for (int j = i + 1; j < array.Length; j++)
                 {
                     if (array[i] > array[j])
                     {
@@ -38,7 +38,7 @@ namespace AlgTrains.Helper
         /// <param name="high">index of the last element</param>
         /// <returns>True if all elements are sorted. False otherwise</returns>
         public static bool IsSorted(this int[] array, int low, int high)
-        {         
+        {
             for (int i = low; i <= high; i++)
             {
                 for (int j = i + 1; j <= high; j++)
@@ -51,6 +51,30 @@ namespace AlgTrains.Helper
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Prints numbers of the array in one line
+        /// </summary>
+        /// <param name="array">array of intgeres</param>
+        public static void Print(this int[] array)
+        {
+            string output = "";
+
+            foreach (int i in array)
+            {
+                output += i + " ";
+            }
+
+            Console.WriteLine(output);
+        }
+
+
+        public static void Swap(this int[] array, int firstIndex, int secondIndex)
+        {
+            int temp = array[firstIndex];
+            array[firstIndex] = array[secondIndex];
+            array[secondIndex] = temp;
         }
     }
 }
