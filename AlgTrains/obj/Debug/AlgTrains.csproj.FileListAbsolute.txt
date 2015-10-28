@@ -12,3 +12,4 @@ C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\Assets\IntegerArray.tx
 C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\AlgTrains.exe
 C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\AlgTrains.pdb
 C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\obj\Debug\AlgTrains.csprojResolveAssemblyReference.cache
+C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\Assets\QuickSort.txt

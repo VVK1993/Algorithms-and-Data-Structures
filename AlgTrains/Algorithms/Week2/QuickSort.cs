@@ -9,35 +9,102 @@ namespace AlgTrains.Algorithms.Week2
 {
     public class QuickSort
     {
+        private static int counter = 0;
+        private const string fileName = "QuickSort.txt";
+
         /// <summary>
-        /// Performs all tasks for Week 1 "Algorithms: Design and Analysis, Part 1" course
+        /// Performs all tasks for Week 2 "Algorithms: Design and Analysis, Part 1" course
         /// </summary>
-        public static void PerformAllTasks()
+        public static async void PerformAllTasks()
         {
-            int[] unsortedArray = new int[] { 5, 1, 3, 6, 2, 4, 9, 8, 7 };
-            unsortedArray.Print();
-            Sort(unsortedArray, 0, unsortedArray.Length - 1);
-            unsortedArray.Print();
+            int[] array = await FileReader.ReadIntegerArray(@"Assets/" + fileName);
+
+            if (array != null)
+            {
+                //Task1(array, 0, array.Length - 1);
+                //Console.WriteLine(string.Format("Task 1 comparisons: {0}", counter));
+
+                //counter = 0;
+                //Task2(array, 0, array.Length - 1);
+                //Console.WriteLine(string.Format("Task 2 comparisons: {0}", counter));
+
+                counter = 0;
+                Task3(array, 0, array.Length - 1);
+                Console.WriteLine(string.Format("Task 3 comparisons: {0}", counter));
+            }
+        }
+
+
+        private static void Task1(int[] array, int low, int high)
+        {
+            if (high <= low) return;
+
+            int index = InPlacePartitionFirstElement(array, low, high);
+
+            counter += high - low;
+
+            Task1(array, low, index - 1);
+            Task1(array, index + 1, high);
+        }
+
+        private static void Task2(int[] array, int low, int high)
+        {
+            if (high <= low) return;
+
+            int index = InPlacePartitionLastElement(array, low, high);
+
+            counter += high - low;
+
+            Task2(array, low, index - 1);
+            Task2(array, index + 1, high);
+        }
+
+        private static void Task3(int[] array, int low, int high)
+        {
+            if (high <= low) return;
+
+            int index = InPlacePartitionMedianElement(array, low, high);
+
+            counter += high - low;
+
+            Task3(array, low, index - 1);
+            Task3(array, index + 1, high);
         }
 
         public static void Sort(int[] array, int low, int high)
         {
             if (high <= low) return;
 
-            int index = InPlacePartition(array, low, high);
+            int pivot = GetPivot(low, high);
+            int index = InPlacePartition(array, low, high, pivot);
 
             Sort(array, low, index);
             Sort(array, index + 1, high);
         }
 
-        private static int InPlacePartition(int[] array, int low, int high)
+        private static int GetPivot(int low, int high)
+        {
+            var rd = new Random();
+            return rd.Next(low, high + 1);
+        }
+
+        /// <summary>
+        /// Running time = O(n)
+        /// Where n = high - (low +1)
+        /// O(1) work per array entry
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="low"></param>
+        /// <param name="high"></param>
+        /// <returns></returns>
+        private static int InPlacePartitionFirstElement(int[] array, int low, int high)
         {
             int pivot = array[low];
             int i = low + 1;
-            
-            for(int j = low +1; j <= high; j++)
+
+            for (int j = low + 1; j <= high; j++)
             {
-                if(array[j] < pivot)
+                if (array[j] < pivot)
                 {
                     array.Swap(j, i);
                     i++;
@@ -48,47 +115,84 @@ namespace AlgTrains.Algorithms.Week2
             return i - 1;
         }
 
-        private static int PartitiongAroundPivot(int[] array, int pivot, int low, int high)
+        private static int InPlacePartitionLastElement(int[] array, int low, int high)
         {
-            int i = low;
-            int j = high;
-            int[] auxiliaryArray = new int[high + 1];
-            int newIndex = 0;
+            array.Swap(high, low);
+            int pivot = array[low];
+            int i = low + 1;
 
-            //copy initial array
-            for (int k = low; k <= high; k++)
+            for (int j = low + 1; j <= high; j++)
             {
-                auxiliaryArray[k] = array[k];
-            }
-
-            for (int k = low; k <= high; k++)
-            {
-                if (auxiliaryArray[k] < pivot)
+                if (array[j] < pivot)
                 {
-                    array[i] = auxiliaryArray[k];
-                    i++;
-                }
-                else if (auxiliaryArray[k] > pivot)
-                {
-                    array[j] = auxiliaryArray[k];
-                    j--;
-                }
-                else
-                {
-                    array[i] = auxiliaryArray[k];
-                    newIndex = i;
+                    array.Swap(j, i);
                     i++;
                 }
             }
 
-            return newIndex;
+            array.Swap(low, i - 1);
+            return i - 1;
         }
 
-        private static int GetPivotIndex(int[] array, int low, int high)
+        private static int InPlacePartitionMedianElement(int[] array, int low, int high)
         {
-            var rd = new Random();
-            return low;
-            //return rd.Next(low, high + 1);
+            int firstElement = array[low];
+            int finalElement = array[high];
+
+            int medianIndex = low + (high - low) / 2;
+            int middleElement = array[(medianIndex)];
+            int median = low;
+            if ((firstElement > middleElement && firstElement < finalElement) || (firstElement < middleElement && firstElement > finalElement))
+            {
+                median = low;
+            }
+
+            if ((middleElement > firstElement && middleElement < finalElement) || (middleElement < firstElement && middleElement > finalElement))
+            {
+                median = medianIndex;
+            }
+
+            if ((finalElement > firstElement && finalElement < middleElement) || (finalElement < firstElement && finalElement > middleElement))
+            {
+                median = high;
+            }
+
+            if (median != low)
+            {
+                array.Swap(low, median);
+            }
+
+            //Putting the last element as the first
+            int pivot = array[low];
+            int i = low + 1;
+            for (int j = low + 1; j <= high; j++)
+            {
+                if (array[j] < pivot)
+                {
+                    array.Swap(j, i);
+                    i++;
+                }
+            }
+
+            array.Swap(low, i - 1);
+            return i - 1;
+        }
+
+        private static int InPlacePartition(int[] array, int low, int high, int pivot)
+        {
+            int i = low + 1;
+
+            for (int j = low + 1; j <= high; j++)
+            {
+                if (array[j] < pivot)
+                {
+                    array.Swap(j, i);
+                    i++;
+                }
+            }
+
+            array.Swap(low, i - 1);
+            return i - 1;
         }
     }
 }
