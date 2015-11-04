@@ -21,12 +21,12 @@ namespace AlgTrains.Algorithms.Week2
 
             if (array != null)
             {
-                //Task1(array, 0, array.Length - 1);
-                //Console.WriteLine(string.Format("Task 1 comparisons: {0}", counter));
+                Task1(array, 0, array.Length - 1);
+                Console.WriteLine(string.Format("Task 1 comparisons: {0}", counter));
 
-                //counter = 0;
-                //Task2(array, 0, array.Length - 1);
-                //Console.WriteLine(string.Format("Task 2 comparisons: {0}", counter));
+                counter = 0;
+                Task2(array, 0, array.Length - 1);
+                Console.WriteLine(string.Format("Task 2 comparisons: {0}", counter));
 
                 counter = 0;
                 Task3(array, 0, array.Length - 1);

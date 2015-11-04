@@ -1,5 +1,6 @@
 ﻿using AlgTrains.Algorithms.Week1;
 using AlgTrains.Algorithms.Week2;
+using AlgTrains.Algorithms.Week3;
 using AlgTrains.Helper;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,8 @@ namespace AlgTrains
         static void Main(string[] args)
         {
             //DivideAndConquer.PerformAllTasks();
-            QuickSort.PerformAllTasks();
+            //QuickSort.PerformAllTasks();
+            RandomGraphContraction.PerformAllTasks();
             Console.ReadKey();
         }
     }

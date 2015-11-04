@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Algorithms\Week1\DivideAndConquer.cs" />
     <Compile Include="Algorithms\Week2\QuickSort.cs" />
+    <Compile Include="Algorithms\Week3\RandomGraphContraction.cs" />
+    <Compile Include="Algorithms\Week3\Vertex.cs" />
     <Compile Include="Helper\ExtensionMethods.cs" />
     <Compile Include="Helper\FileReader.cs" />
     <Compile Include="Program.cs" />
@@ -53,6 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\IntegerArray.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\kargerMinCut.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\QuickSort.txt">

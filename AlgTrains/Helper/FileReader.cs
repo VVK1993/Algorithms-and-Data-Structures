@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using AlgTrains.Algorithms.Week3;
 
 // Author: Vladimir Kovtunovskiy
 namespace AlgTrains.Helper
@@ -39,5 +40,38 @@ namespace AlgTrains.Helper
             }
         }
 
+        public static async Task<List<Vertex>> ReadVertexArray(string fileName)
+        {
+            try
+            {
+                List<Vertex> vertexes = new List<Vertex>();
+
+                using (var stream = new StreamReader(fileName))
+                {
+                    while (!stream.EndOfStream)
+                    {
+                        var line = await stream.ReadLineAsync();
+                        var values = line.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+
+                        int n = Int32.Parse(values[0]);
+                        List<int> edges = new List<int>();
+
+                        for (int i = 1; i < values.Length; i++)
+                        {
+                            edges.Add(Int32.Parse(values[i]));
+                        }
+
+                        vertexes.Add(new Vertex(n, edges));
+                    }
+                }
+
+                return vertexes;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
     }
 }
