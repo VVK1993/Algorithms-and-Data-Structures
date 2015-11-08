@@ -44,9 +44,15 @@
     <Compile Include="Algorithms\Week1\DivideAndConquer.cs" />
     <Compile Include="Algorithms\Week2\QuickSort.cs" />
     <Compile Include="Algorithms\Week3\RandomGraphContraction.cs" />
-    <Compile Include="Algorithms\Week3\Vertex.cs" />
+    <Compile Include="DataStructures\DirectedEdge.cs" />
+    <Compile Include="DataStructures\Vertex.cs" />
+    <Compile Include="Algorithms\Week4\GraphSearch.cs" />
+    <Compile Include="DataStructures\Graph.cs" />
+    <Compile Include="DataStructures\Node.cs" />
+    <Compile Include="Helper\Benchmark.cs" />
     <Compile Include="Helper\ExtensionMethods.cs" />
     <Compile Include="Helper\FileReader.cs" />
+    <Compile Include="Interfaces\ITaskPerformer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -61,6 +67,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\QuickSort.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\SCC.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -1,4 +1,5 @@
-﻿using AlgTrains.Helper;
+﻿using AlgTrains.DataStructures;
+using AlgTrains.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using AlgTrains.Algorithms.Week3;
+using AlgTrains.DataStructures;
 
 // Author: Vladimir Kovtunovskiy
 namespace AlgTrains.Helper
@@ -51,7 +52,7 @@ namespace AlgTrains.Helper
                     while (!stream.EndOfStream)
                     {
                         var line = await stream.ReadLineAsync();
-                        var values = line.Split(new char[] { '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                        var values = line.Split(new char[] { '\t', ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
                         int n = Int32.Parse(values[0]);
                         List<int> edges = new List<int>();

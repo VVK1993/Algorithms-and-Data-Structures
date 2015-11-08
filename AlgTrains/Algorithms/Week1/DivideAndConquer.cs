@@ -1,4 +1,5 @@
 ﻿using AlgTrains.Helper;
+using AlgTrains.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,20 +16,30 @@ namespace AlgTrains.Algorithms.Week1
     /// InversionCount (fast and slow), 
     /// Karatsuba Multiplication
     /// </summary>
-    public class DivideAndConquer
+    public class DivideAndConquer : ITaskPerformer
     {
-        private const string fileName = "IntegerArray.txt";
+        public string TaskDescription
+        {
+            get { return "Task 1: Counting Inversions"; }
+        }
+
+        public string FileName
+        {
+            get { return "IntegerArray.txt"; }
+        }
 
         /// <summary>
         /// Performs all tasks for Week 1 "Algorithms: Design and Analysis, Part 1" course
         /// </summary>
-        public static async void PerformAllTasks()
+        public async Task PerformTask()
         {
-            int[] array = await FileReader.ReadIntegerArray(@"Assets/" + fileName);
+            int[] array = await FileReader.ReadIntegerArray(@"Assets/" + FileName);
 
             if (array != null)
             {
+                Benchmark.Start(TaskDescription);
                 long inversions = GetInversionsCount(array, 0, array.Length - 1);
+                Benchmark.Finish();
                 Console.WriteLine(string.Format("Amount of inversions: {0}", inversions));
             }
 

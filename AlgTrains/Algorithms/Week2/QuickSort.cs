@@ -21,19 +21,41 @@ namespace AlgTrains.Algorithms.Week2
 
             if (array != null)
             {
-                Task1(array, 0, array.Length - 1);
-                Console.WriteLine(string.Format("Task 1 comparisons: {0}", counter));
+                array = new int[] { 10, 8, 7, 2, 4 };
+                array.Print();
+                Console.WriteLine(RandomSelection(array, 0, array.Length - 1, 1));
+                //Task1(array, 0, array.Length - 1);
+                //Console.WriteLine(string.Format("Task 1 comparisons: {0}", counter));
 
-                counter = 0;
-                Task2(array, 0, array.Length - 1);
-                Console.WriteLine(string.Format("Task 2 comparisons: {0}", counter));
+                //counter = 0;
+                //Task2(array, 0, array.Length - 1);
+                //Console.WriteLine(string.Format("Task 2 comparisons: {0}", counter));
 
-                counter = 0;
-                Task3(array, 0, array.Length - 1);
-                Console.WriteLine(string.Format("Task 3 comparisons: {0}", counter));
+                //counter = 0;
+                //Task3(array, 0, array.Length - 1);
+                //Console.WriteLine(string.Format("Task 3 comparisons: {0}", counter));
             }
         }
 
+        public static int RandomSelection(int[] array, int start, int end, int i)
+        {
+            if (end == start)
+                return array[start];
+
+            if (start < end)
+            {
+                int mid = InPlacePartition(array, start, end, GetPivot(start, end));
+                int k = mid - start + 1;
+                if (i == k)
+                    return array[mid];
+                else if (i < k)
+                    return RandomSelection(array, start, mid - 1, i);
+                else
+                    return RandomSelection(array, mid + 1, end, i - k);
+            }
+            else //error 
+                return - 1;
+        }
 
         private static void Task1(int[] array, int low, int high)
         {
