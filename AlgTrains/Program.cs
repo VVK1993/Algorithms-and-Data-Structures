@@ -33,6 +33,7 @@ namespace AlgTrains
                 Console.WriteLine("Awaiting task...");
                 await task;
                 Console.WriteLine(string.Format("{0} done.", t.TaskDescription));
+                Console.WriteLine("--------------------------------------------" );
             }
             Console.WriteLine("All tasks completed!");
         }
@@ -41,6 +42,7 @@ namespace AlgTrains
         {
             courseraTasks = new List<ITaskPerformer>();
             courseraTasks.Add(new DivideAndConquer());
+            courseraTasks.Add(new QuickSort());
         }
     }
 }

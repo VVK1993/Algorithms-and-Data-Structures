@@ -81,5 +81,12 @@ namespace AlgTrains.Helper
         {
             return listToClone.Select(item => (T)item.Clone()).ToList();
         }
+
+        public static int[] CreateCopy(this int[] array)
+        {
+            var copyArray = new int[array.Length];
+            array.CopyTo(copyArray, 0);
+            return copyArray;
+        }
     }
 }

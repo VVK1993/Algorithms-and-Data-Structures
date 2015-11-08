@@ -4,36 +4,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AlgTrains.Helper;
+using AlgTrains.Interfaces;
 
 namespace AlgTrains.Algorithms.Week2
 {
-    public class QuickSort
+    public class QuickSort : ITaskPerformer
     {
         private static int counter = 0;
-        private const string fileName = "QuickSort.txt";
+
+        public string TaskDescription
+        {
+            get { return "Task 2: Counting QuickSort Comparisons"; }
+        }
+
+        public string FileName
+        {
+            get { return "QuickSort.txt"; }
+        }
 
         /// <summary>
         /// Performs all tasks for Week 2 "Algorithms: Design and Analysis, Part 1" course
         /// </summary>
-        public static async void PerformAllTasks()
+        public async Task PerformTask()
         {
-            int[] array = await FileReader.ReadIntegerArray(@"Assets/" + fileName);
+            int[] array = await FileReader.ReadIntegerArray(@"Assets/" + FileName);
 
             if (array != null)
             {
-                array = new int[] { 10, 8, 7, 2, 4 };
-                array.Print();
-                Console.WriteLine(RandomSelection(array, 0, array.Length - 1, 1));
-                //Task1(array, 0, array.Length - 1);
-                //Console.WriteLine(string.Format("Task 1 comparisons: {0}", counter));
+                counter = 0;
+                Benchmark.Start(TaskDescription);
+                Task1(array.CreateCopy(), 0, array.Length - 1);
+                Console.WriteLine(string.Format("Case 1 comparisons: {0}", counter));
 
-                //counter = 0;
-                //Task2(array, 0, array.Length - 1);
-                //Console.WriteLine(string.Format("Task 2 comparisons: {0}", counter));
+                counter = 0;
+                Task2(array.CreateCopy(), 0, array.Length - 1);
+                Console.WriteLine(string.Format("Case 2 comparisons: {0}", counter));
 
-                //counter = 0;
-                //Task3(array, 0, array.Length - 1);
-                //Console.WriteLine(string.Format("Task 3 comparisons: {0}", counter));
+                counter = 0;
+                Task3(array.CreateCopy(), 0, array.Length - 1);
+                Console.WriteLine(string.Format("Case 3 comparisons: {0}", counter));
+                Benchmark.Finish();
             }
         }
 
