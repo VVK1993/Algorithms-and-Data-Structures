@@ -38,11 +38,16 @@ namespace AlgTrains
             Console.WriteLine("All tasks completed!");
         }
 
+        /// <summary>
+        /// Creates objects for all coursera tasks
+        /// </summary>
         private static void InitializeAllTasks()
         {
             courseraTasks = new List<ITaskPerformer>();
-            courseraTasks.Add(new DivideAndConquer());
-            courseraTasks.Add(new QuickSort());
+            //courseraTasks.Add(new DivideAndConquer());
+            //courseraTasks.Add(new QuickSort());
+            //courseraTasks.Add(new RandomGraphContraction());
+            courseraTasks.Add(new GraphSCCConnector());
         }
     }
 }

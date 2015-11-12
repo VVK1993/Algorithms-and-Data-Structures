@@ -41,11 +41,16 @@ namespace AlgTrains.Helper
             }
         }
 
+        /// <summary>
+        /// read data for week 3 task
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
         public static async Task<List<Vertex>> ReadVertexArray(string fileName)
         {
             try
             {
-                List<Vertex> vertexes = new List<Vertex>();
+                List<Vertex> vertices = new List<Vertex>();
 
                 using (var stream = new StreamReader(fileName))
                 {
@@ -62,11 +67,41 @@ namespace AlgTrains.Helper
                             edges.Add(Int32.Parse(values[i]));
                         }
 
-                        vertexes.Add(new Vertex(n, edges));
+                        vertices.Add(new Vertex(n, edges));
                     }
                 }
 
-                return vertexes;
+                return vertices;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// read data for week 4 task
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public static List<DirectedEdge> ReadAdjacencyList(string fileName)
+        {
+           try
+            {
+                var adjacencyList = new List<DirectedEdge>();
+
+                using (var stream = new StreamReader(fileName))
+                {
+                    while (!stream.EndOfStream)
+                    {
+                        var line = stream.ReadLine();
+                        var values = line.Split(new char[] { '\t', ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
+                        adjacencyList.Add(new DirectedEdge(values[0], values[1]));
+                    }
+                }
+
+                return adjacencyList;
             }
             catch (Exception ex)
             {

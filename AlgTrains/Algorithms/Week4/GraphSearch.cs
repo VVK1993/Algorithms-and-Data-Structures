@@ -1,5 +1,6 @@
 ﻿using AlgTrains.DataStructures;
 using AlgTrains.Helper;
+using AlgTrains.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,24 +9,11 @@ using System.Threading.Tasks;
 
 namespace AlgTrains.Algorithms.Week4
 {
-    public class GraphSearch
+    /// <summary>
+    /// Contains DFS and BFS Graph Search Algorithms
+    /// </summary>
+    public class GraphSearch 
     {
-        private const string fileName = "SCC.txt";
-
-        /// <summary>
-        /// Performs all tasks for Week 4 "Algorithms: Design and Analysis, Part 1" course
-        /// </summary>
-        public static async void PerformAllTasks()
-        {
-            var vertices = await FileReader.ReadVertexArray(@"Assets/" + fileName);
-
-            if (vertices != null)
-            {
-                DFSLoop(vertices);
-                Console.WriteLine(ContainsUnexploredVertices(vertices));
-            }
-        }
-
         private static bool ContainsUnexploredVertices(List<Vertex> vertices)
         {
             foreach (var v in vertices)
@@ -36,6 +24,9 @@ namespace AlgTrains.Algorithms.Week4
             return false;
         }
 
+        /// <summary>
+        /// Running Time = O(n + m) linear time
+        /// </summary>
         public static void BreadFirstSearch(List<Vertex> vertices)
         {
             var firstNode = vertices.First();
@@ -57,6 +48,9 @@ namespace AlgTrains.Algorithms.Week4
             }
         }
 
+        /// <summary>
+        /// Running Time = O(n + m) linear time
+        /// </summary>
         public static void DepthFirstSearch(List<Vertex> vertices, Vertex startVertex, Vertex leader, ref int counter)
         {
             startVertex.IsExplored = true;

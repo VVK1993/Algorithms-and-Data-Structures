@@ -1,5 +1,6 @@
 ﻿using AlgTrains.DataStructures;
 using AlgTrains.Helper;
+using AlgTrains.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,21 +9,31 @@ using System.Threading.Tasks;
 
 namespace AlgTrains.Algorithms.Week3
 {
-    public class RandomGraphContraction
+    public class RandomGraphContraction : ITaskPerformer
     {
         private const int AMOUNT_OF_ATTEMPTS = 100;
-        private const string fileName = "kargerMinCut.txt";
+
+        public string TaskDescription
+        {
+            get { return "Task 3: Minimum Graph Cut"; }
+        }
+
+        public string FileName
+        {
+            get { return "kargerMinCut.txt"; }
+        }
 
         /// <summary>
         /// Performs all tasks for Week 3 "Algorithms: Design and Analysis, Part 1" course
         /// </summary>
-        public static async void PerformAllTasks()
+        public async Task PerformTask()
         {
-            var vertices = await FileReader.ReadVertexArray(@"Assets/" + fileName);
+            var vertices = await FileReader.ReadVertexArray(@"Assets/" + FileName);
 
             if (vertices != null)
             {
                 /* karger contraction */
+                Benchmark.Start(TaskDescription);
                 int minCutSize = int.MaxValue;
 
                 for (int i = 0; i < AMOUNT_OF_ATTEMPTS; i++)
@@ -32,7 +43,8 @@ namespace AlgTrains.Algorithms.Week3
                         minCutSize = currentCut;
                 }
 
-                Console.WriteLine(minCutSize);
+                Console.WriteLine(string.Format("Minimum cut size: {0}", minCutSize));
+                Benchmark.Finish();
             }
         }
 

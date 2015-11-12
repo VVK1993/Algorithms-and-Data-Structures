@@ -44,6 +44,7 @@
     <Compile Include="Algorithms\Week1\DivideAndConquer.cs" />
     <Compile Include="Algorithms\Week2\QuickSort.cs" />
     <Compile Include="Algorithms\Week3\RandomGraphContraction.cs" />
+    <Compile Include="Algorithms\Week4\GraphSCCConnector.cs" />
     <Compile Include="DataStructures\DirectedEdge.cs" />
     <Compile Include="DataStructures\Vertex.cs" />
     <Compile Include="Algorithms\Week4\GraphSearch.cs" />
