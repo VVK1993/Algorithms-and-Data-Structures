@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlgTrains.DataStructures
 {
-    public class MinHeap<T> : HeapBase<T> where T : IComparable<T>
+    public class MinHeap<T> : HeapBase<T> where T : IComparable
     {
         public MinHeap()
             : base(Enumerable.Empty<T>())

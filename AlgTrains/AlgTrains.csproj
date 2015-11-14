@@ -54,6 +54,7 @@
     <Compile Include="Algorithms\Week4\GraphSearch.cs" />
     <Compile Include="DataStructures\Graph.cs" />
     <Compile Include="DataStructures\Node.cs" />
+    <Compile Include="DataStructures\WeightedEdge.cs" />
     <Compile Include="Helper\Benchmark.cs" />
     <Compile Include="Helper\ExtensionMethods.cs" />
     <Compile Include="Helper\FileReader.cs" />

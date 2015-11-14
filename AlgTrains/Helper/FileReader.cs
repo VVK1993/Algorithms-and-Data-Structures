@@ -83,8 +83,6 @@ namespace AlgTrains.Helper
         /// <summary>
         /// read data for week 4 task
         /// </summary>
-        /// <param name="p"></param>
-        /// <returns></returns>
         public static List<DirectedEdge> ReadAdjacencyList(string fileName)
         {
            try
@@ -102,6 +100,36 @@ namespace AlgTrains.Helper
                 }
 
                 return adjacencyList;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// read and prepare data for week 5 task
+        /// </summary>
+        internal static async Task<List<WeightedEdge>> ReadWeightedEdgesList(string fileName)
+        {
+            try
+            {
+                var weightedEdges = new List<WeightedEdge>();
+
+                using (var stream = new StreamReader(fileName))
+                {
+                    while (!stream.EndOfStream)
+                    {
+                        var line = await stream.ReadLineAsync();
+                        var values = line.Split(new char[] { '\t', ' ' }, StringSplitOptions.RemoveEmptyEntries).ToArray();
+                        weightedEdges.AddRange(
+                        values.Skip(1).Select(s => s.Split(new[] { ',' }))
+                            .Select(a => new WeightedEdge(int.Parse(values[0]), int.Parse(a[0]), int.Parse(a[1]))).ToList());
+                    }
+                }
+
+                return weightedEdges;
             }
             catch (Exception ex)
             {

@@ -2,6 +2,7 @@
 using AlgTrains.Algorithms.Week2;
 using AlgTrains.Algorithms.Week3;
 using AlgTrains.Algorithms.Week4;
+using AlgTrains.Algorithms.Week5;
 using AlgTrains.Interfaces;
 using AlgTrains.Helper;
 using System;
@@ -44,10 +45,11 @@ namespace AlgTrains
         private static void InitializeAllTasks()
         {
             courseraTasks = new List<ITaskPerformer>();
-            //courseraTasks.Add(new DivideAndConquer());
-            //courseraTasks.Add(new QuickSort());
-            //courseraTasks.Add(new RandomGraphContraction());
+            courseraTasks.Add(new DivideAndConquer());
+            courseraTasks.Add(new QuickSort());
+            courseraTasks.Add(new RandomGraphContraction());
             courseraTasks.Add(new GraphSCCConnector());
+            courseraTasks.Add(new DijkstraShortestPath());
         }
     }
 }

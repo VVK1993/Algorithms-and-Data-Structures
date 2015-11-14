@@ -15,3 +15,4 @@ C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\obj\Debug\AlgTrains.csprojResolv
 C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\Assets\QuickSort.txt
 C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\Assets\kargerMinCut.txt
 C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\Assets\SCC.txt
+C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\Assets\dijkstraData.txt

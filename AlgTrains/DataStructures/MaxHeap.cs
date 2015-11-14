@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlgTrains.DataStructures
 {
-    public class MaxHeap<T> : HeapBase<T> where T : IComparable<T>
+    public class MaxHeap<T> : HeapBase<T> where T : IComparable
     {
         public MaxHeap()
             : base(Enumerable.Empty<T>())

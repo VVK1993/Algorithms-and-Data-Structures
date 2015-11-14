@@ -10,7 +10,7 @@ namespace AlgTrains.DataStructures
     /// Abstract implementation of Heap data structure
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    abstract class HeapBase<T> where T : IComparable<T>
+    public abstract class HeapBase<T> where T : IComparable
     {
          private List<T> items = new List<T>();
 
