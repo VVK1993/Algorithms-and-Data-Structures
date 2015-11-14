@@ -45,6 +45,7 @@
     <Compile Include="Algorithms\Week2\QuickSort.cs" />
     <Compile Include="Algorithms\Week3\RandomGraphContraction.cs" />
     <Compile Include="Algorithms\Week4\GraphSCCConnector.cs" />
+    <Compile Include="Algorithms\Week5\DijkstraShortestPath.cs" />
     <Compile Include="DataStructures\DirectedEdge.cs" />
     <Compile Include="DataStructures\HeapBase.cs" />
     <Compile Include="DataStructures\MaxHeap.cs" />
@@ -64,6 +65,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\dijkstraData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\IntegerArray.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
