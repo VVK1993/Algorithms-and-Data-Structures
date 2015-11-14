@@ -95,7 +95,7 @@ namespace AlgTrains.Algorithms.Week4
         public Task PerformTask()
         {
             adjacencyList = FileReader.ReadAdjacencyList(@"Assets/" + FileName);
-
+        
             var t = new Thread(InternalRun, 200 << 20);
             t.Start();
             t.Join();

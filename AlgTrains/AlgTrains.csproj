@@ -46,6 +46,9 @@
     <Compile Include="Algorithms\Week3\RandomGraphContraction.cs" />
     <Compile Include="Algorithms\Week4\GraphSCCConnector.cs" />
     <Compile Include="DataStructures\DirectedEdge.cs" />
+    <Compile Include="DataStructures\HeapBase.cs" />
+    <Compile Include="DataStructures\MaxHeap.cs" />
+    <Compile Include="DataStructures\MinHeap.cs" />
     <Compile Include="DataStructures\Vertex.cs" />
     <Compile Include="Algorithms\Week4\GraphSearch.cs" />
     <Compile Include="DataStructures\Graph.cs" />
