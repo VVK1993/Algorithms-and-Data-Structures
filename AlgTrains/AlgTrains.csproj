@@ -46,6 +46,8 @@
     <Compile Include="Algorithms\Week3\RandomGraphContraction.cs" />
     <Compile Include="Algorithms\Week4\GraphSCCConnector.cs" />
     <Compile Include="Algorithms\Week5\DijkstraShortestPath.cs" />
+    <Compile Include="Algorithms\Week6\MedianMaintainer.cs" />
+    <Compile Include="Algorithms\Week6\TwoSumCounter.cs" />
     <Compile Include="DataStructures\DirectedEdge.cs" />
     <Compile Include="DataStructures\HeapBase.cs" />
     <Compile Include="DataStructures\MaxHeap.cs" />
@@ -66,6 +68,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\algo1-programming_prob-2sum.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\dijkstraData.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -73,6 +78,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\kargerMinCut.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Median.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\QuickSort.txt">

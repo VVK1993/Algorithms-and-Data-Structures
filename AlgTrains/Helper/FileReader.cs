@@ -137,5 +137,34 @@ namespace AlgTrains.Helper
                 return null;
             }
         }
+
+        /// <summary>
+        /// Reads file that consists of long numbers
+        /// </summary>
+        /// <param name="fileName">name of the specific file to read</param>
+        /// <returns>array of longs</returns>
+        public static async Task<long[]> ReadLongArray(string fileName)
+        {
+            try
+            {
+                List<long> integers = new List<long>();
+
+                using (var stream = new StreamReader(fileName))
+                {
+                    while (!stream.EndOfStream)
+                    {
+                        var value = await stream.ReadLineAsync();
+                        integers.Add(long.Parse(value));
+                    }
+                }
+
+                return integers.ToArray();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
     }
 }

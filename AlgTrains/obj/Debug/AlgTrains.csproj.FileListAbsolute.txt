@@ -16,3 +16,5 @@ C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\Assets\QuickSort.txt
 C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\Assets\kargerMinCut.txt
 C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\Assets\SCC.txt
 C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\Assets\dijkstraData.txt
+C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\Assets\algo1-programming_prob-2sum.txt
+C:\Users\Vladimir\Documents\AlgTrains\AlgTrains\bin\Debug\Assets\Median.txt

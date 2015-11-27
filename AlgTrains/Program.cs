@@ -3,6 +3,7 @@ using AlgTrains.Algorithms.Week2;
 using AlgTrains.Algorithms.Week3;
 using AlgTrains.Algorithms.Week4;
 using AlgTrains.Algorithms.Week5;
+using AlgTrains.Algorithms.Week6;
 using AlgTrains.Interfaces;
 using AlgTrains.Helper;
 using System;
@@ -40,7 +41,7 @@ namespace AlgTrains
         }
 
         /// <summary>
-        /// Creates objects for all coursera tasks
+        /// Creates objects for all Coursera tasks
         /// </summary>
         private static void InitializeAllTasks()
         {
@@ -50,6 +51,8 @@ namespace AlgTrains
             courseraTasks.Add(new RandomGraphContraction());
             courseraTasks.Add(new GraphSCCConnector());
             courseraTasks.Add(new DijkstraShortestPath());
+            courseraTasks.Add(new TwoSumCounter());
+            courseraTasks.Add(new MedianMaintainer());
         }
     }
 }

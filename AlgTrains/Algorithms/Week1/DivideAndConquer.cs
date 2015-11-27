@@ -42,9 +42,6 @@ namespace AlgTrains.Algorithms.Week1
                 Benchmark.Finish();
                 Console.WriteLine(string.Format("Amount of inversions: {0}", inversions));
             }
-
-            int[] unsortedArray = new int[] { 5, 1, 3, 6, 3, 2, 4, 9, 8, 7 };
-            MergeSort(unsortedArray, 0, unsortedArray.Length - 1);
         }
 
         /// <summary>
